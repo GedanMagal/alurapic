@@ -1,6 +1,6 @@
-import { PhotoService } from './photos/photo.service';
+import { PhotoService } from "./photos/photo.service";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Photo } from "./photos/photo/photo";
 
 const API = "http://localhost:3000";
@@ -10,9 +10,17 @@ const API = "http://localhost:3000";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   photos: Photo[] = [];
-  constructor(photoService : PhotoService) {
-    photoService.listFromUsers('flavio').subscribe(photos => (this.photos = photos));
+
+
+  constructor(private photoService: PhotoService) {}
+
+  ngOnInit(): void {
+    this.photoService
+      .listFromUsers("flavio")
+      .subscribe(photos => (this.photos = photos));
   }
+
 }
