@@ -10,17 +10,4 @@ const API = "http://localhost:3000";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent implements OnInit {
-
-  photos: Photo[] = [];
-
-
-  constructor(private photoService: PhotoService) {}
-
-  ngOnInit(): void {
-    this.photoService
-      .listFromUsers("flavio")
-      .subscribe(photos => (this.photos = photos));
-  }
-
-}
+export class AppComponent{}

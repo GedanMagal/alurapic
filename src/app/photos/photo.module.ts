@@ -2,18 +2,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { PhotoComponent } from './photo/photo.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { PhotoListComponent } from './photo-list/photo-list.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   declarations: [
-    PhotoComponent
+    PhotoComponent,
+    PhotoListComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     HttpClientModule
   ],
   exports: [
-    PhotoComponent
+    PhotoComponent,
+    PhotoListComponent
   ],
   providers: []
 })
