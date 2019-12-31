@@ -1,8 +1,1 @@
-<ol class="list-unstyled row">
-  <li *ngFor='let photo of photos' class="col-4">
-    <app-photo
-        [url]='photo.url'
-        [description]="'photos.description'">
-    </app-photo>
-  </li>
-</ol>
+<app-photos [photos]="photos" ></app-photos>
