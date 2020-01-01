@@ -6,8 +6,8 @@
           type="search"
           placeholder="search..."
           autofocus
-          (keyup) = "nome = $event.target.value">
+          (keyup) = "filter = $event.target.value">
   </form>
 </div>
-{{ nome | json }}
-<app-photos [photos]="photos" ></app-photos>
+
+<app-photos [photos]="photos | filterByDescription: filter"  ></app-photos>

@@ -16,7 +16,6 @@ export class PhotoListComponent implements OnInit {
 
   photos: Photo[] = [];
   filter: string = '';
-  nome = '';
 
   constructor(
     private photoService: PhotoService,
